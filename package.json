@@ -1,34 +1,5 @@
 {
-  "name": "@betafcc/pi-digits",
-  "version": "0.1.0",
-  "description": "Utility for calculating digits of Pi",
-  "main": "dist/index.js",
-  "scripts": {
-    "clean": "rimraf dist",
-    "preclean:hard": "npm run clean",
-    "clean:hard": "rimraf node_modules",
-    "prebuild": "npm run clean",
-    "build": "NODE_ENV=production webpack --mode production",
-    "dev": "NODE_ENV=development webpack --mode development",
-    "test": "NODE_ENV=development mocha-webpack"
-  },
-  "keywords": [
-    "math",
-    "pi",
-    "micro"
-  ],
-  "author": "Beta Faccion <betafcc@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "lodash.camelcase": "^4.3.0",
-    "mocha": "^5.2.0",
-    "mocha-webpack": "^2.0.0-beta.0",
-    "rimraf": "^2.6.2",
-    "webpack": "^4.15.1",
-    "webpack-cli": "^3.0.8"
-  },
-  "dependencies": {
-    "big-integer": "^1.6.32"
-  }
+	"devDependencies": {
+		"lerna": "^2.11.0"
+	}
 }
