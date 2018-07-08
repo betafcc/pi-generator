@@ -6,9 +6,10 @@ const package = require('./package.json');
 
 const base = {
   output: {
-    filename: '[name].js',
     library: camelCase(package.name.split('/').slice(-1)[0]),
     libraryTarget: 'umd',
+    umdNamedDefine: true,
+    globalObject: 'this',
   }
 };
 
@@ -31,4 +32,4 @@ const envs = {
 }
 
 
-module.exports = (env, argv) => Object.assing({}, base, envs[argv.mode]);
+module.exports = (env, argv) => Object.assign({}, base, envs[argv.mode]);
