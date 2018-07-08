@@ -10,7 +10,7 @@
     "prebuild": "npm run clean",
     "build": "NODE_ENV=production webpack --mode production",
     "dev": "NODE_ENV=development webpack --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=development mocha-webpack"
   },
   "keywords": [
     "math",
@@ -20,7 +20,10 @@
   "author": "Beta Faccion <betafcc@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.1.2",
     "lodash.camelcase": "^4.3.0",
+    "mocha": "^5.2.0",
+    "mocha-webpack": "^2.0.0-beta.0",
     "rimraf": "^2.6.2",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
