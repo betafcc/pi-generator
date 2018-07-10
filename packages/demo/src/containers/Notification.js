@@ -12,7 +12,7 @@ const Notification = ({
     }) =>
   <div
       className={"Notification" + (showingNotification ? ' visible' : '')}
-      onClick={_ => console.log('clicked')}
+      onClick={hideNotification}
       >
     <div className="Notification__Icon">
       <i className="fa fa-bell-o"></i>

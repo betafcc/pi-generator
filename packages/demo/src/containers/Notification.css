@@ -1,5 +1,6 @@
 .Notification {
-  pointer-events: none;
+  /*pointer-events: none;*/
+  cursor: pointer;
   position: fixed;
   box-sizing: border-box;
   width: 250px;
@@ -12,11 +13,13 @@
   text-align: center;
   display: flex;
   opacity: 0;
-  transition: opacity 0.3s;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
 .Notification.visible {
   opacity: 1;
+  visibility: visible;
 }
 
   .Notification > div {
