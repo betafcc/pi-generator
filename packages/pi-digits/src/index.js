@@ -75,7 +75,7 @@ const recursiveEnv = ({q, r, t, k, n, l}) =>
 
 
 export const stringifyEnv = env =>
-  JSON.stringify(env);
+  JSON.stringify(env, (k, v) => (typeof v === 'bigint') ? v.toString() : v);
 
 
 export const parseEnv = envString =>

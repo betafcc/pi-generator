@@ -68,6 +68,6 @@ describe('stringifyEnv and parseEnv', () => {
   it('Should be inverse', () => {
     const roundabout = parseEnv(stringifyEnv(initialEnv));
 
-    expect(roundabout).to.equal(initialEnv);
+    expect(roundabout).to.deep.equal(initialEnv);
   })
 });
