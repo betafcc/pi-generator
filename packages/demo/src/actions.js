@@ -54,10 +54,8 @@ export const copy = () => (dispatch, getState) => {
     clearTimeout(getState().notificationId)
 
     dispatch(showNotification(
-      getState().length
-      + 'digits copied to the clipboard',
-
-      setTimeout(() => dispatch(hideNotification()), 1000)
+      getState().result.length + ' digits copied to the clipboard',
+      setTimeout(() => dispatch(hideNotification()), 3000),
     ))
   }
 }

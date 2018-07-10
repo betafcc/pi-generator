@@ -4,8 +4,8 @@ import {setResultNode} from '../actions'
 import './Result.css'
 
 
-const Result = ({result}) =>
-  <div className="Result">
+const Result = ({result, setResultNode}) =>
+  <div className="Result" ref={n => n && setResultNode(n)}>
   {result}
   </div>
 
@@ -14,6 +14,6 @@ export default connect(
   state => state,
 
   dispatch => ({
-    setResultNode: ref => setResultNode(ref)
+    setResultNode: ref => dispatch(setResultNode(ref))
   })
 )(Result)
