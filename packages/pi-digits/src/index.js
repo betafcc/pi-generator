@@ -1,6 +1,9 @@
 // Super hard to use literal syntax with webpack
 // use this for now
-const BigInt = (typeof window !== 'undefined') ? window.BigInt : global.BigInt;
+const BigInt =
+  (typeof window !== 'undefined') ? window.BigInt :
+  (typeof self !== 'undefined') ? self.BigInt :
+  global.BigInt;
 
 
 export const initialEnv = Object.freeze({
