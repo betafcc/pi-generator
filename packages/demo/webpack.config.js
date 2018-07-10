@@ -19,6 +19,7 @@ const base = {
     libraryTarget: 'umd',
     path: join(__dirname, parse(package.main).dir),
     publicPath: '/',
+    globalObject: 'this',
   },
   resolve: {
     extensions: ['.js', '.json']
