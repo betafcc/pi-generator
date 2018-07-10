@@ -1,0 +1,39 @@
+.Notification {
+  pointer-events: none;
+  position: fixed;
+  box-sizing: border-box;
+  width: 250px;
+  height: 80px;
+  background-color: #eee;
+  color: white;
+  top: 10px;
+  right: 10px;
+  font-weight: 300;
+  text-align: center;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.Notification.visible {
+  opacity: 1;
+}
+
+  .Notification > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .Notification .Notification_Icon {
+    background-color: #0074D9;
+    /*display: inline-block;*/
+    width: 70px;
+    height: 100%;
+  }
+
+  .Notification .Notification_Message {
+    background-color: #009FE3;
+    padding: 0 10px;
+    width: calc(100% - 70px);
+  }

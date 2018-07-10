@@ -1,0 +1,20 @@
+.Button {
+  border: 0;
+  width: 50px;
+  height: 30px;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Button:active {
+  background-color: #999;
+}
+
+.Button:not(.enabled) {
+  opacity: 0.5;
+  pointer-events: none;
+}

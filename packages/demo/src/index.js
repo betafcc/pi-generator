@@ -1,11 +1,16 @@
+import 'babel-polyfill'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {Provider} from 'react-redux'
 
-
-const App = () => <h1>Hello World</h1>
+import App from './containers/App'
+import store from './store'
 
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root'),
 )

@@ -1,0 +1,9 @@
+.Result {
+  /*user-select: none;*/
+  height: calc(100% - 220px);
+  overflow-y: auto;
+  font-family: monospace;
+  word-wrap: break-word;
+  padding: 10px 10px 0 10px;
+  font-size: 1.3em;
+}
