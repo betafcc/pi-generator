@@ -1,0 +1,39 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:hard": "npm run clean && rimraf node_modules",
+    "prebuild": "npm run clean",
+    "build": "NODE_ENV=production webpack --mode production",
+    "dev": "NODE_ENV=development webpack-dev-server --mode development",
+    "start": "npm run dev"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash.camelcase": "^4.3.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "worker-loader": "^2.0.0"
+  }
+}
