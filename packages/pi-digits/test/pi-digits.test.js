@@ -6,6 +6,8 @@ import {
   takeDigits,
   nextDigit,
   initialEnv,
+  stringifyEnv,
+  parseEnv,
 } from '../src/index';
 
 
@@ -59,4 +61,13 @@ describe('takeDigits', () => {
 
     expect(digits).to.equal(PI.slice(0, 100));
   });
+});
+
+
+describe('stringifyEnv and parseEnv', () => {
+  it('Should be inverse', () => {
+    const roundabout = parseEnv(stringifyEnv(initialEnv));
+
+    expect(roundabout).to.equal(initialEnv);
+  })
 });
