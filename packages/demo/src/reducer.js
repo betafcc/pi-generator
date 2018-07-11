@@ -18,11 +18,11 @@ export default (state, action) => {
       ...state,
       stepping: state.playing,
       result: state.result + action.stepResult,
-      timeElapsed: state.timeElapsed + action.stepElapsed,
     }
     case 'RESET': return {
       ...state,
       result: '',
+      timeElapsed: 0,
     }
 
     case 'COPY': return state
@@ -41,6 +41,25 @@ export default (state, action) => {
     case 'SET_RESULT_NODE': return {
       ...state,
       resultNode: action.node,
+    }
+
+    case 'START_WATCH': return {
+      ...state,
+      watchId: action.id,
+      startWatchTime: action.timestamp,
+    }
+
+    case 'UPDATE_WATCH': return {
+      ...state,
+      startWatchTime: action.timestamp,
+      timeElapsed: state.timeElapsed + action.timestamp - state.startWatchTime,
+    }
+
+    case 'STOP_WATCH': return {
+      ...state,
+      watchId: null,
+      startWatchTime: null,
+      timeElapsed: state.timeElapsed +  action.timestamp - state.startWatchTime,
     }
 
     default: return state

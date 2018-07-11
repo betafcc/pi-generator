@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import './Stats.css'
 
+import {formatTimeDuration} from '../lib/util'
+
 
 const Stats = ({totalDigits=100, timeElapsed=0, className, ...props}) =>
   <div
@@ -27,7 +29,7 @@ const TimeElapsed = ({timeElapsed, className, ...props}) =>
       className={"TimeElapsed" + (className ? ' ' + className : '')}
       {...props}
       >
-    {timeElapsed} cpu time
+    {formatTimeDuration(timeElapsed)} cpu time
   </div>
 
 

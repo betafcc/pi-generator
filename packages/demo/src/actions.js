@@ -3,7 +3,15 @@ import {copyElementTextContent} from './lib/util'
 
 
 export const play = () => async function(dispatch, getState) {
-  dispatch({type: 'PLAY'})
+  dispatch({
+    type: 'PLAY',
+  })
+
+  dispatch({
+    type: 'START_WATCH',
+    timestamp: Date.now(),
+    id: setInterval(_ => dispatch({type: 'UPDATE_WATCH', timestamp: Date.now()}), 250),
+  })
 
   while (getState().playing)
     dispatch(receiveStep(await nextDigitExecutor.nextDigit()))
@@ -12,10 +20,15 @@ export const play = () => async function(dispatch, getState) {
 
 
 export const pause = () => (dispatch, getState) => {
-  clearTimeout(getState().playingId)
+  clearTimeout(getState().watchId)
 
   dispatch({
-    type: 'PAUSE'
+    type: 'PAUSE',
+  })
+
+  dispatch({
+    type: 'STOP_WATCH',
+    timestamp: Date.now(),
   })
 }
 
@@ -29,10 +42,9 @@ export const requestStep = () => async function(dispatch) {
 }
 
 
-const receiveStep = ({digit, elapsed}) => ({
+const receiveStep = digit => ({
   type: 'RECEIVE_STEP',
   stepResult: digit,
-  stepElapsed: elapsed,
 })
 
 

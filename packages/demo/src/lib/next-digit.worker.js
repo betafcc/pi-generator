@@ -7,11 +7,9 @@ let env = initialEnv
 const handler = message => {
   switch (message.type) {
     case 'NEXT_DIGIT'  :
-      const before = Date.now();
-      const [digit, newEnv] = nextDigit(env)
-      const elapsed = Date.now() - before;
+      const [r, newEnv] = nextDigit(env)
       env = newEnv
-      return {elapsed, digit}
+      return r
 
     case 'REQUEST_ENV' :
       return stringifyEnv(env)

@@ -22,6 +22,8 @@ export default createStore(
   rootReducer,
   {
     playing: false,
+    startWatchTime: null,
+    watchId: null,
 
     notificationMessage: null,
     showingNotification: false,
