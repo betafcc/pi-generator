@@ -7,21 +7,21 @@ class NextDigitExecutor extends Executor {
   nextDigit = () => this
     .submit({type: 'NEXT_DIGIT'})
 
-  getRawEnv = () => this
+  getStrEnv = () => this
     .submit({type: 'REQUEST_ENV'})
 
   getEnv = () => this
-    .getRawEnv()
+    .getStrEnv()
     .then(env => parseEnv(env))
 
-  setRawEnv = rawEnv => this
+  setStrEnv = strEnv => this
     .submit({
       type: 'SET_ENV',
-      env: rawEnv,
+      env: strEnv,
     })
 
   setEnv = env => this
-    .setRawEnv(stringifyEnv(env))
+    .setStrEnv(stringifyEnv(env))
 
   reset = () => this
     .submit({type: 'RESET'})
