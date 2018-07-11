@@ -4,9 +4,15 @@ import {setResultNode} from '../actions'
 import './Result.css'
 
 
-const Result = ({result, setResultNode}) =>
-  <div className="Result" ref={n => n && setResultNode(n)}>
-  {result}
+const Result = ({result, setResultNode, className, ...props}) =>
+  <div
+      className={"Result" + (className ? ' ' + className : '')}
+      ref={n => n && setResultNode(n)}
+      {...props}
+      >
+  {
+    result
+  }
   </div>
 
 
