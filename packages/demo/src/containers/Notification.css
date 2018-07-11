@@ -17,7 +17,7 @@
   transition: opacity 0.3s, visibility 0.3s;
 }
 
-.Notification.visible {
+.Notification--visible {
   opacity: 1;
   visibility: visible;
 }
@@ -28,14 +28,14 @@
     flex-direction: column;
   }
 
-  .Notification .Notification_Icon {
+  .Notification .Notification__Icon {
     background-color: #0074D9;
     /*display: inline-block;*/
     width: 70px;
     height: 100%;
   }
 
-  .Notification .Notification_Message {
+  .Notification .Notification__Message {
     background-color: #009FE3;
     padding: 0 10px;
     width: calc(100% - 70px);

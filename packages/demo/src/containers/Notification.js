@@ -11,13 +11,13 @@ const Notification = ({
       hideNotification,
     }) =>
   <div
-      className={"Notification" + (showingNotification ? ' visible' : '')}
+      className={"Notification" + (showingNotification ? ' Notification--visible' : '')}
       onClick={hideNotification}
       >
     <div className="Notification__Icon">
       <i className="fa fa-bell-o"></i>
     </div>
-    <div className="Notification_Message">{notificationMessage}</div>
+    <div className="Notification__Message">{notificationMessage}</div>
   </div>
 
 
