@@ -6,15 +6,16 @@ import Controls from './Controls'
 import Notification from './Notification'
 import Result from './Result'
 import Hero from '../components/Hero'
+import Header from '../components/Header'
 
 
 const App = () =>
   <div className='App'>
-    <div className="header">
+    <Header>
       <Hero>π</Hero>
       <Controls />
       <Notification />
-    </div>
+    </Header>
     <Result />
   </div>
 
