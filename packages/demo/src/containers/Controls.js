@@ -34,7 +34,7 @@ const Controls = ({
 
 
 export default connect(
-  state => state,
+  ({playing, stepping}) => ({playing, stepping}),
 
   dispatch => ({
     play: () => dispatch(play()),

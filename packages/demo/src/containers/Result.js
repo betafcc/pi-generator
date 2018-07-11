@@ -17,7 +17,7 @@ const Result = ({result, setResultNode, className, ...props}) =>
 
 
 export default connect(
-  state => state,
+  ({result}) => ({result}),
 
   dispatch => ({
     setResultNode: ref => dispatch(setResultNode(ref))

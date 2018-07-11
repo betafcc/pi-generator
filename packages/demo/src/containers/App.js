@@ -9,6 +9,7 @@ import Notification from './Notification'
 import Result from './Result'
 import Hero from '../components/Hero'
 import Header from '../components/Header'
+import Stats from './Stats'
 
 
 const App = () =>
@@ -16,6 +17,7 @@ const App = () =>
     <Header>
       <Hero>π</Hero>
       <Controls />
+      <Stats />
       <Notification />
     </Header>
     <Result />
