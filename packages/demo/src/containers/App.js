@@ -5,11 +5,13 @@ import * as actions from '../actions'
 import Controls from './Controls'
 import Notification from './Notification'
 import Result from './Result'
+import Hero from '../components/Hero'
 
 
 const App = () =>
   <div className='App'>
     <div className="header">
+      <Hero>π</Hero>
       <Controls />
       <Notification />
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Play, Step, Reset, Copy} from '../components'
+import {Play, Step, Reset, Copy} from '../components/Buttons'
 import {play, pause, step, requestStep, reset, copy} from '../actions'
 
 
