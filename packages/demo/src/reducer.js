@@ -17,7 +17,8 @@ export default (state, action) => {
     case 'RECEIVE_STEP': return {
       ...state,
       stepping: state.playing,
-      result: state.result + action.stepResult
+      result: state.result + action.stepResult,
+      timeElapsed: state.timeElapsed + action.stepElapsed,
     }
     case 'RESET': return {
       ...state,

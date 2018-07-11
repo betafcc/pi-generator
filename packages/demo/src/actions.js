@@ -29,9 +29,10 @@ export const requestStep = () => async function(dispatch) {
 }
 
 
-const receiveStep = r => ({
+const receiveStep = ({digit, elapsed}) => ({
   type: 'RECEIVE_STEP',
-  stepResult: r,
+  stepResult: digit,
+  stepElapsed: elapsed,
 })
 
 

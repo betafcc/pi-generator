@@ -30,6 +30,8 @@ export default createStore(
     stepping: false,
     resultNode: null,
     result: '',
+
+    timeElapsed: 0,
   },
   composeEnhancers(applyMiddleware(...middlewares)),
 )

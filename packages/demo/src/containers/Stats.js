@@ -32,6 +32,9 @@ const TimeElapsed = ({timeElapsed, className, ...props}) =>
 
 
 export default connect(
-  state => ({totalDigits: state.result.length}),
+  ({timeElapsed, result: {length : totalDigits}}) => ({
+    timeElapsed,
+    totalDigits,
+  }),
   dispatch => ({}),
 )(Stats)
