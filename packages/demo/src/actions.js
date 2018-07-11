@@ -2,7 +2,7 @@ import nextDigitExecutor from './lib/next-digit.executor'
 import {copyElementTextContent} from './lib/util'
 
 
-export const play = () => async function(dispatch, getState) {
+export const play = () => async (dispatch, getState) => {
   dispatch({
     type: 'PLAY',
   })
@@ -33,7 +33,7 @@ export const pause = () => (dispatch, getState) => {
 }
 
 
-export const requestStep = () => async function(dispatch) {
+export const requestStep = () => async (dispatch) => {
   dispatch({
     type: 'REQUEST_STEP'
   })
@@ -54,6 +54,8 @@ export const reset = () => dispatch => {
     .then(_ => dispatch({
       type: 'RESET',
     }))
+
+  localStorage.clear()
 }
 
 
@@ -94,3 +96,29 @@ export const setResultNode = node => ({
   type: 'SET_RESULT_NODE',
   node,
 })
+
+
+export const saveProgress = () => async (dispatch, getState) => {
+  const {result, timeElapsed} = getState()
+  const env = await nextDigitExecutor.getStrEnv()
+
+  Object
+    .entries({result, timeElapsed, env})
+    .forEach(([k, v]) => localStorage.setItem(k, v))
+
+  dispatch({type: 'SAVE_PROGRESS'})
+}
+
+
+export const loadProgress = () => (dispatch, getState) => {
+  const previousEnv = localStorage.getItem('env')
+
+  if (previousEnv)
+    nextDigitExecutor.setStrEnv(previousEnv)
+
+  dispatch({
+    type: 'LOAD_PROGRESS',
+    result: localStorage.getItem('result') || '',
+    timeElapsed: Number.parseInt(localStorage.getItem('timeElapsed')) || 0,
+  })
+}

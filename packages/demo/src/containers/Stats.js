@@ -29,7 +29,7 @@ const TimeElapsed = ({timeElapsed, className, ...props}) =>
       className={"TimeElapsed" + (className ? ' ' + className : '')}
       {...props}
       >
-    {formatTimeDuration(timeElapsed)} cpu time
+    {formatTimeDuration(timeElapsed)} elapsed
   </div>
 
 

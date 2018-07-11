@@ -62,6 +62,12 @@ export default (state, action) => {
       timeElapsed: state.timeElapsed +  action.timestamp - state.startWatchTime,
     }
 
+    case 'LOAD_PROGRESS': return {
+      ...state,
+      result: action.result,
+      timeElapsed: action.timeElapsed,
+    }
+
     default: return state
   }
 }

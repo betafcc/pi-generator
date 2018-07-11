@@ -1,18 +1,28 @@
-import React, {Fragment} from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import * as actions from '../actions'
+import {saveProgress, loadProgress} from '../actions'
 import './App.css'
 
 
+import Header from '../components/Header'
+import Hero from '../components/Hero'
 import Controls from './Controls'
+import Stats from './Stats'
 import Notification from './Notification'
 import Result from './Result'
-import Hero from '../components/Hero'
-import Header from '../components/Header'
-import Stats from './Stats'
 
 
-const App = () =>
+class App extends Component {
+  componentWillMount = () => {
+    this.props.loadProgress()
+    this.saveIntervalId = setInterval(() => this.props.saveProgress(), 3000)
+  }
+
+  componentWillUnmount = () => {
+    clearInterval(this.saveIntervalId)
+  }
+
+  render = () =>
   <div className='App'>
     <Header>
       <Hero>π</Hero>
@@ -22,80 +32,13 @@ const App = () =>
     </Header>
     <Result />
   </div>
-
-
-export default App
-
-
-
-/*
-const App = ({
-      playing,
-      stepping,
-      resultNode,
-      calculatedDigits,
-      timeElapsed,
-      result,
-      notificationMessage,
-
-      togglePlay,
-      step,
-      reset,
-      copy,
-      hideNotification,
-      setResultNode,
-    }) =>
-  <div className="App">
-    <Header>
-      <Hero>π</Hero>
-
-      <Controls>
-        <Play
-            playing={playing}
-            onClick={togglePlay}
-            />
-        <Step
-            stepping={stepping}
-            onClick={step}
-            />
-        <Reset
-            onClick={reset}
-            />
-        <Copy
-            onClick={_ => copy(resultNode)}
-            />
-      </Controls>
-
-      <Stats>
-        <CalculatedDigits>{calculatedDigits}</CalculatedDigits>
-        <TimeElapsed>{timeElapsed}</TimeElapsed>
-      </Stats>
-    </Header>
-
-    <Result
-        ref={n => setResultNode(n)}
-        >
-      {result}
-    </Result>
-
-    <Notification
-        onClick={hideNotification}
-        >
-      {notificationMessage}
-    </Notification>
-  </div>
+}
 
 
 export default connect(
-  state => state,
-
+  state => ({}),
   dispatch => ({
-    togglePlay:       () => dispatch(actions.togglePlay()),
-    step:             () => dispatch(actions.step()),
-    reset:            () => dispatch(actions.reset()),
-    copy:             () => dispatch(actions.copy()),
-    hideNotification: () => dispatch(actions.hideNotification()),
-    setResultNode:     n => dispatch(actions.setResultNode(n)),
+    loadProgress: () => dispatch(loadProgress()),
+    saveProgress: () => dispatch(saveProgress()),
   })
 )(App)
-*/
