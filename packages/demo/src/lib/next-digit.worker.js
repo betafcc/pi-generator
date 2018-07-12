@@ -1,4 +1,4 @@
-import {nextDigit, initialEnv, parseEnv, stringifyEnv} from '@betafcc/pi-digits'
+import {nextDigit, initialEnv, parseEnv, stringifyEnv} from 'pi-generator'
 
 
 let env = initialEnv

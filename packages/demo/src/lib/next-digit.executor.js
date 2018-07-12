@@ -1,6 +1,6 @@
 import Executor from './executor'
 import NextDigitWorker from  './next-digit.worker'
-import {parseEnv, stringifyEnv} from '@betafcc/pi-digits'
+import {parseEnv, stringifyEnv} from 'pi-generator'
 
 
 class NextDigitExecutor extends Executor {
