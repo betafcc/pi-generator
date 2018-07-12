@@ -11,7 +11,7 @@ let composeEnhancers = compose
 if (process.env.NODE_ENV === 'development') {
   middlewares = [
     ...middlewares,
-    logger,
+    // logger,
   ]
 
   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

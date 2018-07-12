@@ -1,4 +1,4 @@
-import {nextDigit, initialEnv, parseEnv, stringifyEnv} from 'pi-generator'
+import {nextDigit, initialEnv, parseEnv, stringifyEnv} from './pi-generator-wrapper'
 
 
 let env = initialEnv

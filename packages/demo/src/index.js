@@ -16,3 +16,8 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'),
 )
+
+
+import {nextDigit, takeDigits} from './lib/pi-generator-wrapper'
+
+Object.assign(window, {nextDigit, takeDigits})
