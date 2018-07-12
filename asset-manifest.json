@@ -1,6 +1,6 @@
 {
-  "main.js": "/main.js",
-  "main.css": "/main.css",
-  "6e4dab74d610fa06b639.worker.js": "/6e4dab74d610fa06b639.worker.js",
-  "index.html": "/index.html"
+  "main.js": "/pi-generator/main.js",
+  "main.css": "/pi-generator/main.css",
+  "22b40e918c07eb220999.worker.js": "/pi-generator/22b40e918c07eb220999.worker.js",
+  "index.html": "/pi-generator/index.html"
 }
