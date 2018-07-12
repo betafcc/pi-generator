@@ -4,7 +4,7 @@ Pausable/resumable pi digits generator.
 
 See the demo: https://betafcc.github.io/pi-generator
 
-This module was made to demonstrate the new [native BigInt](https://github.com/tc39/proposal-bigint) fir JS.
+This module was made to demonstrate the new [native BigInt](https://github.com/tc39/proposal-bigint) for JS.
 
 
 ## Install
