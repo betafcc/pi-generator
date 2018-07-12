@@ -2,7 +2,9 @@ const {join, parse} = require('path');
 const camelCase = require('lodash.camelcase');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 
 const package = require('./package.json');
@@ -84,6 +86,7 @@ const env = {
     },
     plugins: [
       ...base.plugins,
+      new InterpolateHtmlPlugin({'PUBLIC_URL': ''}),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
     ],
@@ -113,11 +116,14 @@ const env = {
 
     plugins: [
       ...base.plugins,
+      new InterpolateHtmlPlugin({'PUBLIC_URL': package.homepage || ''}),
       new ExtractTextWebpackPlugin({
         filename: '[name].css',
         allChunks: true,
       }),
-
+      new ManifestPlugin({
+        fileName: 'asset-manifest.json',
+      }),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.ModuleConcatenationPlugin(),
     ]

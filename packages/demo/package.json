@@ -2,16 +2,18 @@
   "name": "demo",
   "version": "0.1.0",
   "description": "",
+  "homepage": "https://betafcc.github.io/pi-generator",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "clean:hard": "npm run clean && rimraf node_modules",
-    "prebuild": "npm run clean",
+    "copypublic": "mkdir dist && cp -r public/* dist && rm dist/index.html",
+    "prebuild": "npm run clean && npm run copypublic",
     "build": "NODE_ENV=production webpack --mode production",
     "dev": "NODE_ENV=development webpack-dev-server --mode development",
     "start": "npm run dev"
   },
-  "author": "",
+  "author": "Beta Faccion <betafcc@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "pi-generator": "0.1.0",
@@ -26,8 +28,9 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
+    "interpolate-html-plugin": "^3.0.0",
     "lodash.camelcase": "^4.3.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
@@ -43,6 +46,7 @@
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4",
+    "webpack-manifest-plugin": "^2.0.3",
     "worker-loader": "^2.0.0"
   }
 }
