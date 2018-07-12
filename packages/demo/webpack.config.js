@@ -20,7 +20,6 @@ const base = {
     library: camelCase(package.name.split('/').slice(-1)[0]),
     libraryTarget: 'umd',
     path: join(__dirname, parse(package.main).dir),
-    publicPath: '/',
     globalObject: 'this',
   },
   resolve: {
@@ -58,6 +57,10 @@ const base = {
 
 const env = {
   development: {
+    output: {
+      ...base.output,
+      publicPath: '/',
+    },
     devtool: 'source-map',
     devServer: {
       hot: true,
@@ -94,6 +97,10 @@ const env = {
 
 
   production: {
+    output: {
+      ...base.output,
+      publicPath: package.homepage ? '/' + package.homepage.split('/').slice(-1)[0] + '/' : '/',
+    },
     module: {
       rules: [
         ...base.module.rules,
