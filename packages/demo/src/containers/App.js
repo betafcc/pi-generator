@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {saveProgress, loadProgress} from '../actions'
 import './App.css'
 
-
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Controls from './Controls'
