@@ -11,13 +11,13 @@
     "prebuild": "npm run clean && npm run copypublic",
     "build": "NODE_ENV=production webpack --mode production",
     "dev": "NODE_ENV=development webpack-dev-server --mode development",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Beta Faccion <betafcc@gmail.com>",
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "git+https://github.com/betafcc/pi-generator.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betafcc/pi-generator.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -34,6 +34,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^3.2.0",
     "interpolate-html-plugin": "^3.0.0",
     "lodash.camelcase": "^4.3.0",
