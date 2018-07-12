@@ -2,7 +2,7 @@
   "name": "pi-generator",
   "version": "0.1.0",
   "description": "Utility for calculating digits of Pi",
-  "main": "dist?index.js",
+  "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "preclean:hard": "npm run clean",
