@@ -92,10 +92,14 @@ export const hideNotification = () => (dispatch, getState) => {
 }
 
 
-export const setResultNode = node => ({
-  type: 'SET_RESULT_NODE',
-  node,
-})
+export const setResultNode = node => {
+  node.scrollTop = node.scrollHeight - node.clientHeight
+
+  return {
+    type: 'SET_RESULT_NODE',
+    node,
+  }
+}
 
 
 export const saveProgress = () => async (dispatch, getState) => {
