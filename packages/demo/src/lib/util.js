@@ -22,9 +22,11 @@ export const formatTimeDuration = ms => {
   const s = Math.floor(ms / 1000) % 60;
 
   if (d)
-    return `${d}d ${h}h ${s}s`;
+    return `${d}d ${h}h ${m}m ${s}s`;
   if (h)
-    return `${h}h ${s}s`;
+    return `${h}h ${m}m ${s}s`;
+  if (m)
+    return `${m}m ${s}s`
 
   return `${s}s`;
 };
