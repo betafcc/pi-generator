@@ -11,7 +11,7 @@ const Result = ({result, setResultNode, className, ...props}) =>
       {...props}
       >
   {
-    result
+    result.length > 1 ? result.slice(0, 1) + '.' + result.slice(1) : result
   }
   </div>
 
